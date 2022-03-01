@@ -6,12 +6,16 @@ import SecondaryButton from "../button/SecondaryButton/SecondaryButton";
 function RowComponent(props) {
   return (
     <Fragment>
-      {props.buttonType == "Primary" ? (
-        <PrimaryButton text="Submit" />
-      ) : (
-        <SecondaryButton text="Submit" />
-      )}
-      <TextComponent text={props.textMessage} />
+      <td>
+        <TextComponent textMessage={props.textMessage} />
+      </td>
+      <td>
+        {props.feesPaid == true ? (
+          <PrimaryButton text="Submit" />
+        ) : (
+          <SecondaryButton text="Submit" />
+        )}
+      </td>
     </Fragment>
   );
 }

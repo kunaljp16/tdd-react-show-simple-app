@@ -1,5 +1,5 @@
 function TextComponent(props) {
-  return <p>{props.text}</p>;
+  return <span>{props.textMessage}</span>;
 }
 
 export default TextComponent;

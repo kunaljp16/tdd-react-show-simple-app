@@ -1,14 +1,20 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
 import ListComponent from "./listComponent";
-import StudentDetailsData from "./../../MockData/StudentsDetails";
+import StudentDetailsData from "./../../MockData/StudentsDetailsData";
+import RowComponent from "../RowComponent/RowComponent";
 
 test("shouldShowListOfTextWithButton", () => {
-  const listComponent = shallow(
-    <ListComponent StudentDetailsData={StudentDetailsData} />
-  );
+  const wrapper = shallow(<ListComponent />);
+  const RowComponentWrapper = wrapper.find(RowComponent);
+  expect(RowComponentWrapper.exists()).toBe(true);
 });
 
-// test('shouldShowListOfTextWithSecondaryButton',()=>{
-//     const listComponent = mount(<ListComponent />);
-// })
+test("shouldGetListOfStudentDetails", () => {
+  expect(StudentDetailsData).toEqual(
+    expect.arrayContaining([
+      expect.objectContaining({ id: 1 }),
+      expect.objectContaining({ id: 2 }),
+    ])
+  );
+});

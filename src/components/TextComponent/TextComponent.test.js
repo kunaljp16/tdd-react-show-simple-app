@@ -3,7 +3,7 @@ import { shallow, mount } from "enzyme";
 import TextComponent from "./TextComponent.js";
 
 test("shouldShowTheTextParagraph", () => {
-  const text = "This is some Text";
-  const textComponent = shallow(<TextComponent text={text} />);
-  expect(textComponent.text()).toEqual(text);
+  const textMessage = "This is some Text";
+  const textComponent = shallow(<TextComponent textMessage={textMessage} />);
+  expect(textComponent.text()).toEqual(textMessage);
 });

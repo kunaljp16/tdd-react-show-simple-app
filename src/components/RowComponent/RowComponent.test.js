@@ -1,5 +1,5 @@
 import React from "react";
-import { mount, shallow } from "enzyme";
+import { shallow } from "enzyme";
 import RowComponent from "./RowComponent";
 import PrimaryButton from "../button/PrimaryButton/PrimaryButton";
 import SecondaryButton from "../button/SecondaryButton/SecondaryButton";
@@ -8,7 +8,7 @@ import TextComponent from "../TextComponent/TextComponent";
 test("shouldShowTextAndPrimaryButtonWhenButtonTypeIsPrimary", () => {
   // TODO can we do the same thing with shallow
   const wrapper = shallow(
-    <RowComponent buttonType="Primary" textMessage="Student" />
+    <RowComponent feesPaid={true} textMessage="Student" />
   );
   const primaryChildButton = wrapper.find(PrimaryButton);
 
@@ -20,7 +20,7 @@ test("shouldShowTextAndPrimaryButtonWhenButtonTypeIsPrimary", () => {
 
 test("shouldShowTextAndSecondaryButtonWhenButtonTypeIsSecondary", () => {
   const wrapper = shallow(
-    <RowComponent buttonType="Secondary" textMessage="Student" />
+    <RowComponent feesPaid={false} textMessage="Student" />
   );
   const secondaryChildButton = wrapper.find(SecondaryButton);
 
