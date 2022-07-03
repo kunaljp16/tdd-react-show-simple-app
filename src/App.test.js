@@ -1,9 +1,9 @@
-import { shallow } from "enzyme";
+import { render, screen } from "@testing-library/react";
 import App from "./App";
-import ListComponent from "./components/listComponent/listComponent";
+import { shallow } from "enzyme";
 
-test("shouldShowAppComponentWithListComponent", () => {
+
+test("renders learn react link", () => {
   const wrapper = shallow(<App />);
-  const listWrapper = wrapper.find(ListComponent);
-  expect(listWrapper.exists()).toBe(true);
+  
 });
